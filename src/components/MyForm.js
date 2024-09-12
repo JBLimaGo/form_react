@@ -16,10 +16,17 @@ export const MyForm = () => {
   console.log(name);
   console.log(email);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Enviando formulário");
+    console.log(name, email);
+  };
+
   return (
     <div>
+      {/** Envio de Form - Atributo onSubmit para pegar o evento de submição do formulário handleSubmit Função que pode ser chamando de qual quer nome para processar o envio   */}
       {/* 1 - Criação de Form */}
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name"> Nome:</label>
           <input
@@ -32,6 +39,7 @@ export const MyForm = () => {
         {/** 2 - Lebel envolvendo Input */}
         <label>
           <span>E-mail:</span>
+          {/** 4 - simplificação de manipulação de state */}
           <input
             type="email"
             name="email"

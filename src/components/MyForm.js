@@ -1,12 +1,14 @@
 import "./MyForm.css";
 import { useState } from "react";
 
-export const MyForm = () => {
-  {
-    /** 3 - Gerenciamento de dados */
-  }
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
+export const MyForm = ({ user }) => {
+  /* 6 - Controlled Inputs - Com esse recurso utilizando a "props" visto em outros capitulos posso trazer para tela do usuáio informações que estejam no 
+                             Banco de Dados. */
+
+
+  /** 3 - Gerenciamento de dados */
+  const [name, setName] = useState(user ? user.name : "");
+  const [email, setEmail] = useState(user ? user.email : "");
 
   const handleName = (e) => {
     //console.log("Mudou o nome")
@@ -34,6 +36,7 @@ export const MyForm = () => {
             name="name"
             placeholder="Digite o seu nome"
             onChange={handleName}
+            value={name}
           />
         </div>
         {/** 2 - Lebel envolvendo Input */}
@@ -45,6 +48,7 @@ export const MyForm = () => {
             name="email"
             placeholder="Digite o seu e-mail"
             onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
         </label>
         <input type="submit" value="Enviar" />

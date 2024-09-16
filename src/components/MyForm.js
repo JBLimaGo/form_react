@@ -60,7 +60,7 @@ export const MyForm = ({ user }) => {
             value={email}
           />
         </label>
-        
+
         {/* 8 - TextArea - Um Imput onde tem a possíbilidade de informar varias informações*/}
         <label>
           <span>Bio:</span>
@@ -72,7 +72,7 @@ export const MyForm = ({ user }) => {
           ></textarea>
         </label>
 
-        {/* 9 - Select - Podendo setar informações de crud de uma tela como Ex. Tipo de perpições do usuário*/}  
+        {/* 9 - Select - Podendo setar informações de crud de uma tela como Ex. Tipo de permições do usuário*/}  
         <label>
           <span>Função do sistema:</span>
           <select

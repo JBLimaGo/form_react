@@ -9,6 +9,8 @@ export const MyForm = ({ user }) => {
   const [name, setName] = useState(user ? user.name : "");
   const [email, setEmail] = useState(user ? user.email : "");
 
+  const [bio, setBio] = useState("");
+
   const handleName = (e) => {
     //console.log("Mudou o nome")
     setName(e.target.value);
@@ -20,11 +22,12 @@ export const MyForm = ({ user }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Enviando formulário");
-    console.log(name, email);
+    console.log(name, email, bio);
 
     /* 7 - Limpar Formulário - Limpa os inputs do forms*/
     setName("");
     setEmail("");
+    setBio("");
   };
 
   return (
@@ -54,6 +57,17 @@ export const MyForm = ({ user }) => {
             value={email}
           />
         </label>
+        {/* 8 - TextArea - Um Imput onde tem a possíbilidade de informar varias informações*/}
+        <label>
+          <span>Bio:</span>
+          <textarea
+            name="Bio"
+            placeholder="Descrição do usuário"
+            onChange={(e) => setBio(e.target.value)}
+            value={bio}
+          ></textarea>
+        </label>
+
         <input type="submit" value="Enviar" />
       </form>
     </div>

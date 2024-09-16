@@ -60,6 +60,7 @@ export const MyForm = ({ user }) => {
             value={email}
           />
         </label>
+        
         {/* 8 - TextArea - Um Imput onde tem a possíbilidade de informar varias informações*/}
         <label>
           <span>Bio:</span>

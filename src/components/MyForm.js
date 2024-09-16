@@ -5,7 +5,6 @@ export const MyForm = ({ user }) => {
   /* 6 - Controlled Inputs - Com esse recurso utilizando a "props" visto em outros capitulos posso trazer para tela do usuáio informações que estejam no 
                              Banco de Dados. */
 
-
   /** 3 - Gerenciamento de dados */
   const [name, setName] = useState(user ? user.name : "");
   const [email, setEmail] = useState(user ? user.email : "");
@@ -22,6 +21,10 @@ export const MyForm = ({ user }) => {
     event.preventDefault();
     console.log("Enviando formulário");
     console.log(name, email);
+
+    /* 7 - Limpar Formulário - Limpa os inputs do forms*/
+    setName("");
+    setEmail("");
   };
 
   return (
